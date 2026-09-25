@@ -95,48 +95,60 @@ function tampilkanHome() {
 // PROFIL
 // ===============================
 function bukaProfil() {
-    if (!jemaat) {
+    const dataJemaat =
+        jemaat ||
+        JSON.parse(
+            localStorage.getItem("aomJemaat") || "null"
+        );
+    if (!dataJemaat) {
         alert("Data jemaat belum tersedia.");
         return;
     }
+    jemaat = dataJemaat;
     document.getElementById("contentTitle").textContent =
         "Profil Saya";
-    const html = `
-        ${detail("Nomor Jemaat", jemaat.nomorJemaat)}
-        ${detail("Nama", jemaat.nama)}
-        ${detail("NIK", jemaat.nik)}
-        ${detail("Nomor KK", jemaat.nomorKK)}
-        ${detail("Jenis Kelamin", jemaat.jenisKelamin)}
-        ${detail("Tempat Lahir", jemaat.tempatLahir)}
-        ${detail("Tanggal Lahir", jemaat.tanggalLahir)}
-        ${detail("Nomor HP", jemaat.nomorHP)}
-        ${detail("Alamat", jemaat.alamat)}
-        ${detail("Status Pernikahan", jemaat.statusPernikahan)}
-        ${detail("Status Jemaat", jemaat.statusJemaat)}
-        ${detail("Baptis", jemaat.baptis)}
-        ${detail("Kepala Keluarga", jemaat.kepalaKeluarga)}
-        ${detail("Sektor", jemaat.sektor)}
-        ${detail("Pelayanan", jemaat.pelayanan)}
-    `;
+    let html = "";
+    html += detail("Nomor Jemaat", dataJemaat.nomorJemaat);
+    html += detail("Nama", dataJemaat.nama);
+    html += detail("NIK", dataJemaat.nik);
+    html += detail("Nomor KK", dataJemaat.nomorKK);
+    html += detail("Jenis Kelamin", dataJemaat.jenisKelamin);
+    html += detail("Tempat Lahir", dataJemaat.tempatLahir);
+    html += detail("Tanggal Lahir", dataJemaat.tanggalLahir);
+    html += detail("Nomor HP", dataJemaat.nomorHP);
+    html += detail("Alamat", dataJemaat.alamat);
+    html += detail("Status Pernikahan", dataJemaat.statusPernikahan);
+    html += detail("Status Jemaat", dataJemaat.statusJemaat);
+    html += detail("Baptis", dataJemaat.baptis);
+    html += detail("Kepala Keluarga", dataJemaat.kepalaKeluarga);
+    html += detail("Sektor", dataJemaat.sektor);
+    html += detail("Pelayanan", dataJemaat.pelayanan);
     tampilkanKonten(html);
 }
 // ===============================
 // KELUARGA
 // ===============================
 function bukaKeluarga() {
-    if (!jemaat) {
+    const dataJemaat =
+        jemaat ||
+        JSON.parse(
+            localStorage.getItem("aomJemaat") || "null"
+        );
+    if (!dataJemaat) {
         alert("Data jemaat belum tersedia.");
         return;
     }
+    jemaat = dataJemaat;
     document.getElementById("contentTitle").textContent =
         "Keluarga";
-    const html = `
+    let html = "";
+    html += `
         <div class="detail-card">
             <div class="detail-label">
                 Nomor KK
             </div>
             <div class="detail-value">
-                ${aman(jemaat.nomorKK)}
+                ${aman(dataJemaat.nomorKK)}
             </div>
         </div>
         <div class="detail-card">
@@ -144,7 +156,7 @@ function bukaKeluarga() {
                 Kepala Keluarga
             </div>
             <div class="detail-value">
-                ${aman(jemaat.kepalaKeluarga)}
+                ${aman(dataJemaat.kepalaKeluarga)}
             </div>
         </div>
         <div class="detail-card">
@@ -152,12 +164,13 @@ function bukaKeluarga() {
                 Alamat
             </div>
             <div class="detail-value">
-                ${aman(jemaat.alamat)}
+                ${aman(dataJemaat.alamat)}
             </div>
         </div>
     `;
     tampilkanKonten(html);
-}// ===============================
+}
+// ===============================
 // PENGUMUMAN
 // ===============================
 async function bukaPengumuman() {
