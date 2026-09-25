@@ -45,18 +45,41 @@ async function login() {
         }
         const data =
             await response.json();
-        if (
-            !data ||
-            data.length === 0
+        console.log("HASIL LOGIN:", data);
+        // ===============================
+        // AMBIL DATA JEMAAT
+        // ===============================
+        let dataJemaat = null;
+        // Jika hasil berupa array
+        if (Array.isArray(data)) {
+            if (data.length > 0) {
+                dataJemaat = data[0];
+            }
+        }
+        // Jika hasil berupa object
+        else if (
+            data &&
+            typeof data === "object"
         ) {
+            dataJemaat = data;
+        }
+        // Tidak ada data
+        if (!dataJemaat) {
             error.textContent =
                 "Nomor Jemaat atau PIN salah.";
             return;
         }
-        jemaat = data[0];
+        // ===============================
+        // SIMPAN DATA JEMAAT
+        // ===============================
+        jemaat = dataJemaat;
         localStorage.setItem(
             "aomJemaat",
-            JSON.stringify(jemaat)
+            JSON.stringify(dataJemaat)
+        );
+        console.log(
+            "DATA JEMAAT:",
+            jemaat
         );
         tampilkanHome();
     } catch (e) {
