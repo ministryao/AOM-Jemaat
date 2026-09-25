@@ -1,1 +1,193 @@
-
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+    <meta name="theme-color" content="#007AFF">
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="default"
+    >
+    <meta
+        name="apple-mobile-web-app-title"
+        content="AOM Jemaat"
+    >
+    <title>AOM Jemaat</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <!-- LOGIN -->
+    <section id="loginPage" class="page">
+        <div class="login-container">
+            <div class="logo">
+                <div class="logo-circle">
+                    AOM
+                </div>
+            </div>
+            <h1>AOM Jemaat</h1>
+            <p class="subtitle">
+                Keluarga Alfa Omega Ministry
+            </p>
+            <div class="form-group">
+                <label>
+                    Nomor Jemaat
+                </label>
+                <input
+                    id="nomorJemaat"
+                    type="text"
+                    placeholder="Contoh: AOM-0001"
+                    autocomplete="username"
+                >
+            </div>
+            <div class="form-group">
+                <label>
+                    PIN
+                </label>
+                <input
+                    id="pin"
+                    type="password"
+                    inputmode="numeric"
+                    placeholder="Masukkan PIN"
+                    autocomplete="current-password"
+                >
+            </div>
+            <button
+                class="primary-button"
+                onclick="login()"
+            >
+                Masuk
+            </button>
+            <p
+                id="loginError"
+                class="error"
+            ></p>
+        </div>
+    </section>
+    <!-- HOME -->
+    <section
+        id="homePage"
+        class="page hidden"
+    >
+        <header class="app-header">
+            <div>
+                <div class="greeting">
+                    Shalom
+                </div>
+                <h2 id="namaJemaat">
+                    Jemaat
+                </h2>
+                <span id="nomorJemaatHome">
+                    AOM-0000
+                </span>
+            </div>
+            <div class="profile-icon">
+                👤
+            </div>
+        </header>
+        <main class="content">
+            <div class="menu-grid">
+                <button
+                    class="menu-card"
+                    onclick="bukaProfil()"
+                >
+                    <span class="menu-icon">
+                        👤
+                    </span>
+                    <span>
+                        Profil Saya
+                    </span>
+                </button>
+                <button
+                    class="menu-card"
+                    onclick="bukaKeluarga()"
+                >
+                    <span class="menu-icon">
+                        👨‍👩‍👧
+                    </span>
+                    <span>
+                        Keluarga
+                    </span>
+                </button>
+                <button
+                    class="menu-card"
+                    onclick="bukaPengumuman()"
+                >
+                    <span class="menu-icon">
+                        📢
+                    </span>
+                    <span>
+                        Pengumuman
+                    </span>
+                    <span
+                        id="badgePengumuman"
+                        class="badge hidden"
+                    >
+                        0
+                    </span>
+                </button>
+                <button
+                    class="menu-card"
+                    onclick="bukaJadwal()"
+                >
+                    <span class="menu-icon">
+                        📅
+                    </span>
+                    <span>
+                        Jadwal Ibadah
+                    </span>
+                </button>
+                <button
+                    class="menu-card"
+                    onclick="bukaPengaturan()"
+                >
+                    <span class="menu-icon">
+                        ⚙️
+                    </span>
+                    <span>
+                        Pengaturan
+                    </span>
+                </button>
+            </div>
+            <button
+                class="logout-button"
+                onclick="logout()"
+            >
+                Keluar
+            </button>
+        </main>
+    </section>
+    <!-- CONTENT -->
+    <section
+        id="contentPage"
+        class="page hidden"
+    >
+        <header class="sub-header">
+            <button
+                class="back-button"
+                onclick="kembaliHome()"
+            >
+                ‹
+            </button>
+            <h2 id="contentTitle">
+                AOM
+            </h2>
+        </header>
+        <main
+            id="contentBody"
+            class="content"
+        >
+        </main>
+    </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
