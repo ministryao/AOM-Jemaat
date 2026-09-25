@@ -26,58 +26,54 @@
 <body>
 <div id="app">
     <!-- LOGIN -->
-    <section id="loginPage" class="page">
-        <div class="login-container">
-            <div class="logo">
-                <div class="logo-circle">
-                    AOM
-                </div>
+<section id="loginPage" class="page">
+    <div class="login-container">
+        <div class="logo">
+            <div class="logo-circle">
+                AOM
             </div>
-            <h1>AOM Jemaat</h1>
-            <p class="subtitle">
-                Keluarga Alfa Omega Ministry
-            </p>
-            <div class="form-group">
-                <label>
-                    Nomor Jemaat
-                </label>
-                <input
-                    id="nomorJemaat"
-                    type="text"
-                    placeholder="Contoh: AOM-0001"
-                    autocomplete="username"
-                >
-            </div>
-            <div class="form-group">
-                <label>
-                    PIN
-                </label>
-                <input
-                    id="pin"
-                    type="password"
-                    inputmode="numeric"
-                    placeholder="Masukkan PIN"
-                    autocomplete="current-password"
-                >
-            </div>
-            <button
-                class="primary-button"
-                onclick="login()"
-            >
-                Masuk
-            </button>
-            <p
-                id="loginError"
-                class="error"
-            ></p>
         </div>
-    </section>
-            <button
-                class="secondary-button"
-                onclick="bukaPendaftaran()"
+        <h1>AOM Jemaat</h1>
+        <p class="subtitle">
+            Keluarga Alfa Omega Ministry
+        </p>
+        <div class="form-group">
+            <label>Nomor Jemaat</label>
+            <input
+                id="nomorJemaat"
+                type="text"
+                placeholder="Contoh: AOM-0001"
+                autocomplete="username"
             >
-                Daftar
-            </button>
+        </div>
+        <div class="form-group">
+            <label>PIN</label>
+            <input
+                id="pin"
+                type="password"
+                inputmode="numeric"
+                placeholder="Masukkan PIN"
+                autocomplete="current-password"
+            >
+        </div>
+        <button
+            class="primary-button"
+            onclick="login()"
+        >
+            Masuk
+        </button>
+        <button
+            class="secondary-button"
+            onclick="bukaPendaftaran()"
+        >
+            Daftar
+        </button>
+        <p
+            id="loginError"
+            class="error"
+        ></p>
+    </div>
+</section>
     <!-- HOME -->
     <section
         id="homePage"
