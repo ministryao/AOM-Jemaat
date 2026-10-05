@@ -101604,7 +101604,7 @@ B.SC=new A.ag(B.bf,!1,!0,!0,!1,B.o)
 B.Ss=new A.ag(B.bf,!1,!1,!0,!1,B.o)
 B.wd=new A.cY([B.Sx,B.t,B.S3,B.t,B.AP,B.t,B.AM,B.t,B.So,B.t,B.Sf,B.t,B.SC,B.t,B.Ss,B.t],t.Fp)
 B.OH={"Content-Type":0,Accept:1}
-B.NS=new A.bP(B.OH,["application/json; charset=utf-8","application/json"],t.li)
+B.NS=new A.bP(B.OH,["text/plain; charset=utf-8","application/json"],t.li)
 B.Ou={Accept:0}
 B.NT=new A.bP(B.Ou,["application/json"],t.li)
 B.OD={"iso_8859-1:1987":0,"iso-ir-100":1,"iso_8859-1":2,"iso-8859-1":3,latin1:4,l1:5,ibm819:6,cp819:7,csisolatin1:8,"iso-ir-6":9,"ansi_x3.4-1968":10,"ansi_x3.4-1986":11,"iso_646.irv:1991":12,"iso646-us":13,"us-ascii":14,us:15,ibm367:16,cp367:17,csascii:18,ascii:19,csutf8:20,"utf-8":21}
