@@ -97751,10 +97751,8 @@ p=A.k3(r,q,"")
 r=e.$1("nomorKK")
 q=A.c6("\\D",!1)
 o=A.k3(r,q,"")
-r=p.length
-if(r!==0&&r!==16){f.F(new A.asa(f))
-return}r=o.length
-if(r!==0&&r!==16){f.F(new A.asb(f))
+if(p.length!==16){f.F(new A.asa(f))
+return}if(o.length!==16){f.F(new A.asb(f))
 return}n=f.a.c
 f=e.$1("jenisKelamin")
 r=e.$1("tempatLahir")
